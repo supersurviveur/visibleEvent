@@ -88,34 +88,6 @@ InvisibleEvent | Action
 `data-onbottominvisible`| Call the function when the bottom of the element is invisble
 
 # Optional argument
-You can add `data-recursive="true"` on your element if you want the function to be called **EVERY TIME** the element becomes visible/invisible
-### Example
-```html
-<!-- When the element becomes visible, we call the write function -->
-<div class="element" data-onvisible="write" data-recursive="true">
-</div>
+You can add `data-recursive="true"` on your element if you want the function to be called **EVERY TIME** the element becomes visible/invisible <br>
+If you want to give other arguments to your JavaScript function, add `data-arguments="[firstArgument,secondArgument]"` (arguments can be string, number, HTML element, etc...)
 
-<!-- Our style -->
-<style>
-  .element{
-    /* Add a margin for test the module */
-    margin-top: 1000px;
-    margin-bottom: 1000px;
-
-    /* Set color */
-    background-color: #333;
-    color: white;
-    /* Set size */
-    width: 70vw;
-    height: 300px;
-  }
-</style>
-<!-- Our function -->
-<script>
-  function write(element){
-    // Write in the element
-    element.innerHTML+="Hello World ! <br>";
-  }
-</script>
-```
-### Result:
