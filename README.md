@@ -1,4 +1,4 @@
-# VisibilityEvent
+# VisibleEvent
 A small JavaScript module for call function when an element becomes visible or invisible
 
 # Installation
