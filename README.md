@@ -88,6 +88,6 @@ InvisibleEvent | Action
 `data-onbottominvisible`| Call the function when the bottom of the element is invisble
 
 # Optional argument
-You can add `data-recursive="true"` on your element if you want the function to be called **EVERY TIME** the element becomes visible/invisible <br>
-If you want to give other arguments to your JavaScript function, add `data-arguments="[firstArgument,secondArgument]"` (arguments can be string, number, HTML element, etc...)
+- You can add `data-recursive="true"` on your element if you want the function to be called **EVERY TIME** the element becomes visible/invisible <br>
+- If you want to give other arguments to your JavaScript function, add `data-arguments="[firstArgument,secondArgument]"` (arguments can be string, number, HTML element, etc...)
 
