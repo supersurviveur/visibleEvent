@@ -1,4 +1,4 @@
-//When the all the element is visible
+//When the all the element is visible //
 document.addEventListener("scroll", scrollEvent);
 
 function scrollEvent(){
