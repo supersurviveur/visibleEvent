@@ -5,7 +5,7 @@ A small JavaScript module for call function when an element becomes visible or i
 Download the file [here](https://github.com/supersurviveur/visibilityEvent/releases/download/v1.1/visibleEvent.min.js) and add it on your project<br>
 Then add it the `<head>` of your page with a `<script>` tag:<br>
 ```html
-<script src="path/to/visibilityEvent.min.js" defer></script>
+<script src="path/to/visibleEvent.min.js" defer></script>
 ```
 
 # Usage and example
