@@ -10,6 +10,13 @@ function scrollEvent(){
         let elemTop = elem.offsetTop;
         let elemBottom = elem.offsetTop + elem.offsetHeight;
         let recursive = elem.dataset.recursive!=undefined ? (elem.dataset.recursive=="true" ? true: false) : false;
+        let arg;
+        if (elem.dataset.arguments!=undefined){
+            arg = JSON.parse(elem.dataset.arguments.replace(/'/g,"\""));
+        } else {
+            arg = [];
+        }
+        
 
         if (elemTop>scrollTop && elemBottom<scrollBottom){
             if (elem.dataset.visibleEvent__check==undefined || elem.dataset.visibleEvent__check=="false"){
@@ -17,7 +24,7 @@ function scrollEvent(){
 
                 let functionName = elem.dataset.onvisible;
                 var fn = window[functionName];
-                if (typeof fn === "function") fn(elem);
+                if (typeof fn === "function") fn(elem, ...arg);
             }
         } else if (recursive==true) {
             elem.dataset.visibleEvent__check=false;
@@ -36,6 +43,12 @@ function scrollTopEvent(){
     visibleElement.forEach(elem => {
         let elemTop = elem.offsetTop;
         let recursive = elem.dataset.recursive!=undefined ? (elem.dataset.recursive=="true" ? true: false) : false;
+        let arg;
+        if (elem.dataset.arguments!=undefined){
+            arg = JSON.parse(elem.dataset.arguments.replace(/'/g,"\""));
+        } else {
+            arg = [];
+        }
 
         if (elemTop>scrollTop && elemTop<scrollBottom){
             if (elem.dataset.visibleEvent__check==undefined || elem.dataset.visibleEvent__check=="false"){
@@ -43,7 +56,7 @@ function scrollTopEvent(){
 
                 let functionName = elem.dataset.ontopvisible;
                 var fn = window[functionName];
-                if (typeof fn === "function") fn(elem);
+                if (typeof fn === "function") fn(elem, ...arg);
             }
         } else if (recursive==true) {
             elem.dataset.visibleEvent__check=false;
@@ -62,6 +75,12 @@ function scrollBottomEvent(){
     visibleElement.forEach(elem => {
         let elemBottom = elem.offsetTop + elem.offsetHeight;
         let recursive = elem.dataset.recursive!=undefined ? (elem.dataset.recursive=="true" ? true: false) : false;
+        let arg;
+        if (elem.dataset.arguments!=undefined){
+            arg = JSON.parse(elem.dataset.arguments.replace(/'/g,"\""));
+        } else {
+            arg = [];
+        }
 
         if (elemBottom>scrollTop && elemBottom<scrollBottom){
             if (elem.dataset.visibleEvent__check==undefined || elem.dataset.visibleEvent__check=="false"){
@@ -69,7 +88,7 @@ function scrollBottomEvent(){
 
                 let functionName = elem.dataset.onbottomvisible;
                 var fn = window[functionName];
-                if (typeof fn === "function") fn(elem);
+                if (typeof fn === "function") fn(elem, ...arg);
             }
         } else if (recursive==true) {
             elem.dataset.visibleEvent__check=false;
@@ -93,6 +112,12 @@ function scrollEventInvisible(){
         let elemTop = elem.offsetTop;
         let elemBottom = elem.offsetTop + elem.offsetHeight;
         let recursive = elem.dataset.recursive!=undefined ? (elem.dataset.recursive=="true" ? true: false) : false;
+        let arg;
+        if (elem.dataset.arguments!=undefined){
+            arg = JSON.parse(elem.dataset.arguments.replace(/'/g,"\""));
+        } else {
+            arg = [];
+        }
 
         if (elemTop>scrollBottom || elemBottom<scrollTop){
             if (elem.dataset.invisibleEvent__check=="false"){
@@ -100,7 +125,7 @@ function scrollEventInvisible(){
 
                 let functionName = elem.dataset.oninvisible;
                 var fn = window[functionName];
-                if (typeof fn === "function") fn(elem);
+                if (typeof fn === "function") fn(elem, ...arg);
             }
         } else if (recursive==true || elem.dataset.invisibleEvent__check==undefined) {
             elem.dataset.invisibleEvent__check=false;
@@ -119,6 +144,12 @@ function scrollTopEventInvisible(){
     visibleElement.forEach(elem => {
         let elemTop = elem.offsetTop;
         let recursive = elem.dataset.recursive!=undefined ? (elem.dataset.recursive=="true" ? true: false) : false;
+        let arg;
+        if (elem.dataset.arguments!=undefined){
+            arg = JSON.parse(elem.dataset.arguments.replace(/'/g,"\""));
+        } else {
+            arg = [];
+        }
 
         if (elemTop<scrollTop || elemTop>scrollBottom){
             if (elem.dataset.invisibleEvent__check=="false"){
@@ -126,7 +157,7 @@ function scrollTopEventInvisible(){
 
                 let functionName = elem.dataset.ontopinvisible;
                 var fn = window[functionName];
-                if (typeof fn === "function") fn(elem);
+                if (typeof fn === "function") fn(elem, ...arg);
             }
         } else if (recursive==true || elem.dataset.invisibleEvent__check==undefined) {
             elem.dataset.invisibleEvent__check=false;
@@ -146,6 +177,12 @@ function scrollBottomEventInvisible(){
     visibleElement.forEach(elem => {
         let elemBottom = elem.offsetTop + elem.offsetHeight;
         let recursive = elem.dataset.recursive!=undefined ? (elem.dataset.recursive=="true" ? true: false) : false;
+        let arg;
+        if (elem.dataset.arguments!=undefined){
+            arg = JSON.parse(elem.dataset.arguments.replace(/'/g,"\""));
+        } else {
+            arg = [];
+        }
 
         if (elemBottom<scrollTop || elemBottom>scrollBottom){
             if (elem.dataset.invisibleEvent__check=="false"){
@@ -153,7 +190,7 @@ function scrollBottomEventInvisible(){
 
                 let functionName = elem.dataset.onbottominvisible;
                 var fn = window[functionName];
-                if (typeof fn === "function") fn(elem);
+                if (typeof fn === "function") fn(elem, ...arg);
             }
         } else if (recursive==true || elem.dataset.invisibleEvent__check==undefined) {
             elem.dataset.invisibleEvent__check=false;
