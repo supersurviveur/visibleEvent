@@ -2,7 +2,7 @@
 A small JavaScript module for call function when an element becomes visible or invisible
 
 # Installation
-Download the file [here](https://github.com/supersurviveur/visibilityEvent/releases/download/v1.1/visibleEvent.min.js) and add it on your project<br>
+Download the file [here](https://github.com/supersurviveur/visibleEvent/releases/download/v1.1/visibleEvent.min.js) and add it on your project<br>
 Then add it the `<head>` of your page with a `<script>` tag:<br>
 ```html
 <script src="path/to/visibleEvent.min.js" defer></script>
